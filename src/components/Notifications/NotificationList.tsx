@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   getNotifications,
   markAsRead,
-} from "../../firebase/firestore/notifications";
-import { Notification } from "../../types/Notification";
+} from '../../firebase/firestore/notifications';
+import { Notification } from '../../types/Notification';
 
 const NotificationList: React.FC = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -34,7 +34,7 @@ const NotificationList: React.FC = () => {
           <li
             key={notification.id}
             style={{
-              textDecoration: notification.isRead ? "line-through" : "none",
+              textDecoration: notification.isRead ? 'line-through' : 'none',
             }}
           >
             {notification.message}

@@ -1,6 +1,6 @@
-import React from "react";
-import { addNotification } from "../../firebase/firestore/notifications";
-import Button from "../Button/Button";
+import React from 'react';
+import { addNotification } from '../../firebase/firestore/notifications';
+import Button from '../Button/Button';
 
 const NotificationButtons: React.FC = () => {
   const handleButtonClick = async (message: string) => {
@@ -11,15 +11,15 @@ const NotificationButtons: React.FC = () => {
     <>
       <Button
         text="Notification Button 1"
-        onClick={() => handleButtonClick("Notification 1")}
+        onClick={() => handleButtonClick('Notification 1')}
       />
       <Button
         text="Notification Button 2"
-        onClick={() => handleButtonClick("Notification 2")}
+        onClick={() => handleButtonClick('Notification 2')}
       />
       <Button
         text="Notification Button 3"
-        onClick={() => handleButtonClick("Notification 3")}
+        onClick={() => handleButtonClick('Notification 3')}
       />
     </>
   );

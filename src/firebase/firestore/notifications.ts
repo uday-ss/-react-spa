@@ -4,11 +4,11 @@ import {
   getDocs,
   updateDoc,
   doc,
-} from "firebase/firestore";
-import { db } from "../config";
-import { Notification } from "../../types/Notification";
+} from 'firebase/firestore';
+import { db } from '../config';
+import { Notification } from '../../types/Notification';
 
-const notificationsCollection = collection(db, "notifications");
+const notificationsCollection = collection(db, 'notifications');
 
 export const addNotification = async (message: string): Promise<void> => {
   await addDoc(notificationsCollection, {
@@ -22,12 +22,12 @@ export const getNotifications = async (): Promise<Notification[]> => {
     notificationsCollection
   );
   return notificationsCollectionsnapshot.docs.map(
-    (doc) => ({ id: doc.id, ...doc.data() } as Notification)
+    (doc) => ({ id: doc.id, ...doc.data() }) as Notification
   );
 };
 
 export const markAsRead = async (id: string): Promise<void> => {
-  const notificationDoc = doc(db, "notifications", id);
+  const notificationDoc = doc(db, 'notifications', id);
   await updateDoc(notificationDoc, {
     isRead: true,
   });

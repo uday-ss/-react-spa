@@ -1,10 +1,8 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import NotificationButtons from "./components/Notifications/NotificationButtons";
-import NotificationList from "./components/Notifications/NotificationList";
-
-import { Link } from "react-router-dom";
+import NotificationButtons from './components/Notifications/NotificationButtons';
+import NotificationList from './components/Notifications/NotificationList';
 
 const App: React.FC = () => {
   return (
