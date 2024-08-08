@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+import NotificationButtons from "./components/Notifications/NotificationButtons";
+import NotificationList from "./components/Notifications/NotificationList";
+
+import { Link } from "react-router-dom";
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <h1>Notification System</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/notifications/send">Send Notification</Link>
+            </li>
+            <li>
+              <Link to="/notifications/list">View Notifications</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/notifications/send" element={<NotificationButtons />} />
+          <Route path="/notifications/list" element={<NotificationList />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
