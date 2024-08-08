@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 
-console.log(process.env.REACT_APP_FIREBASE_PROJECT_ID);
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,8 +10,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
-
-console.log(process.env.REACT_APP_FIREBASE_APP_ID);
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
