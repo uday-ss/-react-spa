@@ -20,7 +20,9 @@ const NotificationList: React.FC = () => {
   const handleMarkAsRead = async (id: string) => {
     await markAsRead(id);
     setNotifications(
-      notifications.map((n) => (n.id === id ? { ...n, isRead: true } : n))
+      notifications.map((notify) =>
+        notify.id === id ? { ...notify, isRead: true } : notify
+      )
     );
   };
 
