@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+## Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- **Notification System**: can generate and view notifications. Notifications can be marked as read.
+- **Firebase Integration**: Utilizes Firebase Firestore for data storage
+- **Emulator Support**: Set up Firebase emulators for development without affecting live data.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, ensure you have met the following requirements:
 
-### `npm start`
+- **Node.js** and **npm** installed.
+- **Firebase CLI** installed.
+- A **Firebase project** set up (you can use the Firebase CLI to create a new project).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Clone the repository**:
 
-### `npm test`
+    ```bash
+    git clone https://github.com/yourusername/firebase-react-spa.git
+    cd firebase-react-spa
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies**:
 
-### `npm run build`
+    ```bash
+    yarn install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Set up Firebase**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - Create a new Firebase project from the [Firebase Console](https://console.firebase.google.com/).
+    - Add a new web app to your project and copy the Firebase config.
+    - Replace the Firebase configuration in  with your `env.example`:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+4. **Set up Firebase Emulators**:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```bash
+    firebase init emulators
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Choose emulators for Firestore.
+    - Start the emulators:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```bash
+    yarn firebase emulators:start
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. **Run the development server**:
 
-## Learn More
+    ```bash
+    yarn run start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - This will start the React development server. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+6. **Linting, Testing, Prettier**:
+
+    ```bash
+    yarn run lint
+    yarn run format
+    yarn run test
+    yarn run tsc
+    ```
+
+
+
