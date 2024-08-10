@@ -19,7 +19,7 @@ const messaging = getMessaging(app);
 
 // Use emulators for development
 if (process.env.NODE_ENV === 'development') {
-  connectFirestoreEmulator(db, 'localhost', 8086);
+  connectFirestoreEmulator(db, 'localhost', 8080);
 }
 
 export { db, messaging };
