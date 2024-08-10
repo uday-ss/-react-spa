@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import NotificationButtons from './components/Notifications/NotificationButtons';
 import NotificationList from './components/Notifications/NotificationList';
+import { useRequestPermission, useCustomNotification } from './hooks';
 
 const App: React.FC = () => {
+  useRequestPermission();
+  useCustomNotification();
   return (
     <Router>
       <div>
