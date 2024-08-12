@@ -4,6 +4,7 @@ importScripts(
   'https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js'
 );
 
+// replace with your firebase config key
 firebase.initializeApp({
   apiKey: 'api-key',
   authDomain: 'project-id.firebaseapp.com',
