@@ -5,7 +5,7 @@ importScripts(
 );
 
 
-firebase.initializeApp();
+// firebase.initializeApp();
 
 const messaging = firebase.messaging();
 
