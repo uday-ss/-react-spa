@@ -1,10 +1,24 @@
 import React from 'react';
-import { addNotification } from '../../firebase/firestore/notifications';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+
 import Button from '../Button/Button';
+import { getToken } from '../../lib/storage';
 
 const NotificationButtons: React.FC = () => {
   const handleButtonClick = async (message: string) => {
-    await addNotification(message);
+    const functions = getFunctions();
+    const sendNotification = httpsCallable(functions, 'sendNotification');
+
+    try {
+      const token = getToken();
+      await sendNotification({
+        token: token,
+        title: 'Notification',
+        body: message,
+      });
+    } catch (error) {
+      console.error('Error sending notification:', error);
+    }
   };
 
   return (

@@ -4,17 +4,17 @@ importScripts(
   'https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js'
 );
 
+const config = {
+  apiKey: 'AIzaSyDxZyTT6lSJf869ZGgMzGDSMkHG3YqVWVM',
+  authDomain: 'react-spa-typescript-14467.firebaseapp.com',
+  projectId: 'react-spa-typescript-14467',
+  storageBucket: 'react-spa-typescript-14467.appspot.com',
+  messagingSenderId: '550486223429',
+  appId: '1:550486223429:web:1c109debddd19011f9d12c',
+};
+
 // replace with your firebase config key
-firebase.initializeApp({
-  apiKey: 'api-key',
-  authDomain: 'project-id.firebaseapp.com',
-  databaseURL: 'https://project-id.firebaseio.com',
-  projectId: 'project-id',
-  storageBucket: 'project-id.appspot.com',
-  messagingSenderId: 'sender-id',
-  appId: 'app-id',
-  measurementId: 'G-measurement-id',
-});
+firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 

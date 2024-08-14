@@ -1,6 +1,7 @@
 import { getToken } from 'firebase/messaging';
 import { useEffect } from 'react';
 import { messaging } from '../firebase/config';
+import { setToken } from '../lib/storage';
 
 export function useRequestPermission() {
   useEffect(() => {
@@ -16,7 +17,7 @@ export function useRequestPermission() {
           })
           .then(async (currentToken) => {
             if (currentToken) {
-              console.log('FCM Token:', currentToken);
+              setToken(currentToken);
             } else {
               console.log(
                 'No registration token available. Request permission to generate one.'
