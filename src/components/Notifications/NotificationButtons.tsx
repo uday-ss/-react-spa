@@ -3,9 +3,11 @@ import { getFunctions, httpsCallable } from 'firebase/functions';
 
 import Button from '../Button/Button';
 import { getToken } from '../../lib/storage';
+import { addNotification } from '../../firebase/firestore/notifications';
 
 const NotificationButtons: React.FC = () => {
   const handleButtonClick = async (message: string) => {
+    addNotification(message);
     const functions = getFunctions();
     const sendNotification = httpsCallable(functions, 'sendNotification');
 
