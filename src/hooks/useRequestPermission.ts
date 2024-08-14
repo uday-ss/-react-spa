@@ -9,7 +9,8 @@ export function useRequestPermission() {
       if (permission === 'granted') {
         navigator.serviceWorker
           .register('/firebase-messaging-sw.js')
-          .then((registration) => {
+          .then(async (registration) => {
+            await navigator.serviceWorker.ready;
             return getToken(messaging, {
               vapidKey: process.env.REACT_APP_VAP_ID_KEY,
               serviceWorkerRegistration: registration,
